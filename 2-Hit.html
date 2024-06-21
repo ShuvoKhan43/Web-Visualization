@@ -61,20 +61,20 @@
 
       const loader = new THREE.GLTFLoader();
       let reticle;
-      loader.load("https://transfer.hft-stuttgart.de/gitlab/32ismd1mpg/islam/-/blob/master/Web%20AR/reticle.gltf", function (gltf) {
+      loader.load("https://immersive-web.github.io/webxr-samples/media/gltf/reticle/reticle.gltf", function (gltf) {
         reticle = gltf.scene;
         reticle.visible = false;
         scene.add(reticle);
       })
 
-      let flower;
-      loader.load("https://github.com/immersive-web/webxr-samples/tree/main/media/gltf/home-theater/home-theater.gltf", function (gltf) {
-        flower = gltf.scene;
+      let hometheater;
+      loader.load("https://github.com/ShuvoKhan43/Web-Visualization/blob/main/home-theater.gltf", function (gltf) {
+        hometheater = gltf.scene;
       });
 
       session.addEventListener("select", (event) => {
-        if (flower) {
-          const clone = flower.clone();
+        if (hometheater) {
+          const clone = hometheater.clone();
           clone.position.copy(reticle.position);
           scene.add(clone);
         }
